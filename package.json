@@ -1,6 +1,6 @@
 {
   "name": "@touratica/array-utils",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "",
   "main": "./lib/cjs/index.js",
   "scripts": {
@@ -9,11 +9,12 @@
     "build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
     "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
     "prepack": "npm run build",
-    "test": "mocha"
+    "test": "mocha",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Touratica/array-utils.git"
+    "url": "https://github.com/Touratica/array-utils.git"
   },
   "keywords": [],
   "author": "João Pedro Almeida <me@touratica.pt> (https://github.com/Touratica)",
@@ -27,6 +28,7 @@
     "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
+    "semantic-release": "^19.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   },
@@ -45,5 +47,13 @@
       }
     }
   },
-  "types": "./lib/cjs/types/index.d.ts"
+  "types": "./lib/cjs/types/index.d.ts",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
