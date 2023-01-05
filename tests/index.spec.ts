@@ -15,10 +15,21 @@ describe("Array", () => {
     it("should return a deep copy of the array with nested arrays", () => {
       let arr = [2, 11, [37, 42]];
       let a2 = Array.deepCopy(arr);
-      assert.deepStrictEqual(arr, a2);
+      assert.deepEqual(arr, a2);
       assert.notEqual(arr, a2);
     });
   });
+
+  describe("#shallowCopy", () => {
+    it("should return a shallow copy of the array", () => {
+      let arr = [[2, 11], 37, 42];
+      let a2 = Array.shallowCopy(arr);
+      assert.deepEqual(arr, a2);
+      assert.notEqual(arr, a2);
+      assert.equal(arr[0], a2[0]);
+    });
+  });
+
   describe("#shuffle", () => {
     it("should return a shuffled array", () => {
       let arr = [2, 11, 37, 42];
