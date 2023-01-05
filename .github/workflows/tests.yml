@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ["lts/*", "latest"]
+        node-version: ["lts/-3", "lts/-2", "lts/-1", "lts/*", "latest"] # Use last 4 LTS and latest versions
 
     steps:
       - uses: actions/checkout@v3
